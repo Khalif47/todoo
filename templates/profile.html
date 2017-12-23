@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}Profile{% endblock %}
+
+{% block main %}
+<form>
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">A brief description about yourself ?</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlTextarea2">What are your main skills ?</label>
+        <textarea class="form-control" id="exampleFormControlTextarea2" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlTextarea3">What are your life aspirations ?</label>
+        <textarea class="form-control" id="exampleFormControlTextarea3" rows="3"></textarea>
+    </div>
+    <div class="col-md-3 mb-3">
+        <label for="validationDefault05">Number of organizations you've worked for ?</label>
+        <input type="number" class="form-control" id="validationDefault05" name="number" required>
+        <div class="invalid-feedback">
+            Please provide a valid zip.
+        </div>
+    </div>
+
+</form>
+{% endblock %}

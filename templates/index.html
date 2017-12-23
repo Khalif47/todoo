@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+index
+{% endblock %}
+
+{% block main %}
+<div id="front_index">
+    <a href="{{ url_for('login_employer') }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Employer</a>
+    <br/><br/>
+    <a href="{{ url_for('login_employee') }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Employee</a>
+</div>
+{% endblock %}

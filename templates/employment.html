@@ -1,0 +1,54 @@
+{% extends "layout_employee.html" %}
+
+{% block title %}Profile{% endblock %}
+
+{% block main %}
+<form action="{{ url_for('profile') }}" method="post">
+    <fieldset>
+        {% for i in number %}
+        <div class="form-group">
+            <input type="text" class="form-control" name="company" placeholder="company" required/>
+            <input type="text" class="form-control" name="positions" placeholder="position" required/>
+            <input type="number" class="form-control" name="years" placeholder="Number of years" required/>
+            <label for="exampleFormControlSelect1">Industry</label>
+            <select class="form-control" id="exampleFormControlSelect1" name="industries">
+                <option value=""></option>
+                <option value="accounting">accounting</option>
+                <option value="Administration and Office support">Administration and Office support</option>
+                <option value="Advertising and arts media">Advertising and arts media</option>
+                <option value="Banking and financial services">Banking and financial services</option>
+                <option value="Call centre and Customer Services">Call centre and Customer Services</option>
+                <option value="CEO and general Management">CEO and general Management</option>
+                <option value="Community Services and development">Community Services and development</option>
+                <option value="Construction">Construction</option>
+                <option value="Consulting and strategy">Consulting and strategy</option>
+                <option value="Design and Architecture">Design and Architecture</option>
+                <option value="Education and training">Education and training</option>
+                <option value="Engineering">Engineering</option>
+                <option value="Farming, Animal and conservation">Farming, Animal and conservation</option>
+                <option value="Government and defence">Government and defence</option>
+                <option value="Health care and medical">Health care and medical</option>
+                <option value="Hospitality and Tourism">Hospitality and Tourism</option>
+                <option value="Human Resources and recruitment">Human Resources and recruitment</option>
+                <option value="Information communication and technology">Information communication and technology</option>
+                <option value="Insurance and Superannuation">Insurance and Superannuation</option>
+                <option value="Legal">Legal</option>
+                <option value="Manufacturing transport or logistics">Manufacturing transport or logistics</option>
+                <option value="Marketing and communication">Marketing and communication</option>
+                <option value="Mining resources or energy">Mining resources or energy</option>
+                <option value="Real Estate and property">Real Estate and property</option>
+                <option value="Retail and consumer products">Retail and consumer products</option>
+                <option value="Sales">Sales</option>
+                <option value="Science and technology">Science and technology</option>
+                <option value="Self employment">Self employment</option>
+                <option value="Sport and recreation">Sport and recreation</option>
+            </select>
+        </div>
+        <br/>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </fieldset>
+</form>
+{% endblock %}
+
+

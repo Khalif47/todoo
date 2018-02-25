@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+Home Page
+{% endblock %}
+
+{% block main %}
+<table class="table table-striped">
+    <thead>
+    {% for number_id, id_1 , industry, title, role, skills, positions, year, candidate in posts %}
+    <tr>
+        <th scope="col">{{ industry }}</th>
+        <th scope="col">{{ title }}</th>
+        <th scope="col">{{ candidate }}</th>
+    </tr>
+    </thead>
+    <thead>
+    <tr>
+        <th scope="col">name</th>
+        <th scope="col">suburb</th>
+        <th scope="col">points</th>
+    </tr>
+    </thead>
+    {% for id_2, post_id, name, suburb, industry_1, description, skills_1, aspirations, years, positions_1, company,
+    industries, email, points in candidates %}
+    {% if post_id|string() == number_id|string() %}
+    <tbody>
+    <tr>
+        <td>{{ name }}</td>
+        <td>{{ suburb }}</td>
+        <td>{{ points }}</td>
+        <td>
+            <form action="{{ url_for('review') }}" method="post">
+                <button class="btn btn-info" value="[('{{ name }}', '{{ suburb }}', '{{ industry_1 }}', '{{ description }}', '{{ skills_1 }}', '{{ aspirations }}', {{ years }}, {{ positions_1 }}, {{ company }},
+    {{ industries }}, {{ points }} )]" name="data">Review
+                </button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+</table>
+<br/>
+
+{% endblock %}
+

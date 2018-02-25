@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}Profile{% endblock %}
+
+{% block main %}
+<form action="{{ url_for('posts') }}" method="post" xmlns="http://www.w3.org/1999/html">
+    <fieldset>
+        {% for i in e %}
+        <div class="form-group">
+            <input type="text" class="form-control" name="positions" placeholder="position" required/>
+            <input type="number" class="form-control" name="years" placeholder="Number of years" required/>
+        </div>
+        <br/>
+        {% endfor %}
+    <br/>
+    <br/>
+        {% for i in s %}
+        <div class="form-group">
+            <input type="text" class="form-control" name="skills" placeholder="skills" required/>
+        </div>
+        <br/>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </fieldset>
+</form>
+{% endblock %}

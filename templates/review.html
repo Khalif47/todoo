@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Review
+{% endblock %}
+
+{% block main %}
+{% for name, suburb, industry_1, description, skills_1, aspirations, years, positions_1, company,
+    industries, points in data %}
+<h1>Review</h1>
+<br/><font size="3" color="red">Name</font><br/>{{ name }}
+<br/><font size="3" color="red">Industry</font><br/>{{ industry_1 }}
+<br/>
+<font size="3" color="red">Description</font>
+<br/>
+{{description}}<br/>
+<font size="3" color="red">Skills</font><br>
+{{skills_1}}
+<br/>
+<font size="3" color="red">Aspiration</font><br/>
+{{aspirations }}
+<br/><br/>
+<h2>Experience</h2>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Company</th>
+        <th>Industry</th>
+        <th>Title</th>
+        <th>Years</th>
+    </tr>
+    </thead>
+    {% for item in company %}
+    <tbody>
+        <tr>
+            <td>{{ item }}</td>
+            <td>{{ industries[loop.index0] }}</td>
+            <td>{{ positions_1[loop.index0] }}</td>
+            <td>{{ years[loop.index0] }}</td>
+        </tr>
+    </tbody>
+    {% endfor %}
+</table>
+{% endfor %}
+{% endblock %}
